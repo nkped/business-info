@@ -2,18 +2,22 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Home from './pages/Home.jsx'
-import Search from './pages/Search.jsx'
+import HomePage from './pages/HomePage.jsx'
+import SearchPage from './pages/SearchPage.jsx'
 import NotFoundPage from './pages/NotFoundPage.jsx'
+import SearchResultsPage from './pages/SearchResultsPage.jsx'
 
 
 const router = createBrowserRouter([{
   path:'/',
-  element: <Home />,
+  element: <HomePage />,
   errorElement: <NotFoundPage />
 }, {
-  path:'/search',
-  element: <Search />
+  path: '/results',
+  element: <SearchResultsPage />
+}, {
+  path:`/search`,
+  element: <SearchPage />
 }])
 
 createRoot(document.getElementById('root')).render(
