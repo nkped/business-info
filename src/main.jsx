@@ -4,11 +4,13 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import Search from './pages/Search.jsx'
+import NotFoundPage from './pages/NotFoundPage.jsx'
+
 
 const router = createBrowserRouter([{
   path:'/',
   element: <Home />,
-  errorElement: <div>404 Page not found, Sorry..</div>
+  errorElement: <NotFoundPage />
 }, {
   path:'/search',
   element: <Search />
