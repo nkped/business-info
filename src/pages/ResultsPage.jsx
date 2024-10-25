@@ -1,15 +1,22 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 
 
 const ResultsPage = () => {
     const results = [1,2,3,4]
   return (
-    <div className="flex flex-col gap-2" >
+    <div className="flex gap-2">
+      <div className="flex flex-col gap-2">
         {results.map((result) => (        
-            <Link key={result} to={`/result/${result}`}>Result: {result}</Link>
+            <NavLink 
+              key={result} 
+              to={`/results/${result}`} 
+              className={({isActive}) => isActive ? 'text-yellow-300' : ''}
+             >Result: {result}</NavLink>
             )
         )}
+        </div>
+        <Outlet />
     </div>
   )
 }

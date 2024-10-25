@@ -17,11 +17,12 @@ const router = createBrowserRouter([{
   element: <SearchPage />
 }, {
   path: '/results',
-  element: <ResultsPage />
-} , {
-  path: '/result/:id',
-  element: <ResultPage />
-} ])
+  element: <ResultsPage />,
+  children: [{
+    path: '/results/:resultId',
+    element: <ResultPage />
+  }],
+}])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
